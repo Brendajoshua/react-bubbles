@@ -44,7 +44,7 @@ const Login = props => {
         onChange={handleChange}
         />
         </Form.Field>
-        <Form.Button type="submit" color="sienna" content="Login" />
+        <Form.Button type="submit" color="blue" content="Login" />
       </Form>
     </Container>
     </div>
