@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { Form, Container } from 'semantic-ui-react';
 
 const emptyForm = { username: '', password: ''}
 
@@ -21,9 +22,11 @@ const Login = props => {
     .catch(err => console.log(err))
   }
   return (
-    <>
+    <div className="loginpage">
+    <Container>
       <h1>Welcome to the Bubble App!</h1>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
+        <Form.Field>
         <input
         type="text"
         name="username"
@@ -31,6 +34,8 @@ const Login = props => {
         value={credentials.username}
         onChange={handleChange}
         />
+        </Form.Field>
+        <Form.Field>
         <input
         type="password"
         name="password"
@@ -38,9 +43,11 @@ const Login = props => {
         value={credentials.password}
         onChange={handleChange}
         />
-        <button type="submit">Log in</button>
-      </form>
-    </>
+        </Form.Field>
+        <Form.Button type="submit" color="sienna" content="Login" />
+      </Form>
+    </Container>
+    </div>
   );
 };
 

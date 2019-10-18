@@ -18,7 +18,8 @@ const ColorList = ({ colors, updateColors }) => {
 
   const saveEdit = e => {
     e.preventDefault();
-    axiosWithAuth().put(`/colors/${colorToEdit.id}`, colorToEdit)
+    axiosWithAuth()
+    .put(`/colors/${colorToEdit.id}`, colorToEdit)
     .then(res => {
       console.log(res)
       updateColors(colors.map(color => color.id === res.data.id ? res.data : color))
@@ -29,8 +30,9 @@ const ColorList = ({ colors, updateColors }) => {
 
   const deleteColor = (e, color)=> {
     e.stopPropagation();
-   axiosWithAuth().delete(`/colors/${color.id}`)
-   .then(res => {
+   axiosWithAuth()
+    .delete(`/colors/${color.id}`)
+    .then(res => {
      updateColors(colors.filter(color => color.id !== res.data))
    })
    .catch(err => console.log(err))
@@ -38,7 +40,8 @@ const ColorList = ({ colors, updateColors }) => {
 
   const addColor = e => {
     e.preventDefault();
-    axiosWithAuth().post('/colors', colorToAdd)
+    axiosWithAuth()
+    .post('/colors', colorToAdd)
     .then(res => {
       updateColors(res.data)
       setColorToAdd(initialColor);

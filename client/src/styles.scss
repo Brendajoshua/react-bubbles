@@ -14,6 +14,7 @@ body,
   font-family: "Montserrat", sans-serif;
   text-align: center;
   display: flex;
+  
 
   svg {
     height: 100%;
@@ -94,3 +95,21 @@ form {
     margin-top: 16px;
   }
 }
+h1 {
+  color: black; 
+  font-size: 62px; 
+  font-weight: 800; 
+  line-height: 72px; 
+  margin: 0 0 24px; 
+  text-align: center; 
+  text-transform: uppercase;
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background-image: radial-gradient(#6cd6da, #FFDAB9, MediumPurple, #F08080 );
+  background-attachment: fixed;
+}
+
+
