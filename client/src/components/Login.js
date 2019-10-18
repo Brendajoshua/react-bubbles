@@ -18,6 +18,7 @@ const Login = props => {
     .then(res => {
       localStorage.setItem('token', res.data.payload);
       setCredentials(emptyForm);
+      props.history.push('/bubbles')
     })
     .catch(err => console.log(err))
   }
