@@ -25,6 +25,8 @@ const Bubbles = ({ colors }) => {
           includeRoot={false}
           nodeEnter={d => ({ ...d, r: 0 })}
           animate
+          springStiffness={150}
+          springDamping={6}
         >
           {nodes =>
             nodes
