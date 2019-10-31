@@ -5,13 +5,20 @@ const bodyParser = require("body-parser");
 const CORS = require("cors");
 
 const app = express();
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 
 const token =
   "ahuBHejkJJiMDhmODZhZi0zaeLTQ4ZfeaseOGZgesai1jZWYgrTA07i73Gebhu98";
 
 app.use(bodyParser.json());
 app.use(CORS());
+
+app.use(express.static(__dirname + '/client/build'))
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/client/build/index.html')
+})
+
 
 let colors = [
   {
@@ -92,12 +99,6 @@ let colors = [
     id: 11
   }
 ];
-
-app.use(express.static(__dirname + '/client/build'))
-
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/client/build/index.html')
-})
 
 
 let nextId = 12;
