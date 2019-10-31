@@ -13,10 +13,10 @@ const token =
 app.use(bodyParser.json());
 app.use(CORS());
 
-app.use(express.static(__dirname + '/client/build'))
+app.use(express.static(__dirname + '/../client/build'))
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/client/build/index.html')
+  res.sendFile(__dirname + '/../client/build/index.html')
 })
 
 
