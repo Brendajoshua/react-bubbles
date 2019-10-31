@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const CORS = require("cors");
+const cors = require("cors");
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -11,7 +11,7 @@ const token =
   "ahuBHejkJJiMDhmODZhZi0zaeLTQ4ZfeaseOGZgesai1jZWYgrTA07i73Gebhu98";
 
 app.use(bodyParser.json());
-app.use(CORS());
+app.use(cors());
 
 app.use(express.static(__dirname + '/../client/build'))
 
