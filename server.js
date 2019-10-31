@@ -1,8 +1,12 @@
+require('dotenv').config();
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const CORS = require("cors");
 
 const app = express();
+const port = process.env.PORT;
+
 const token =
   "ahuBHejkJJiMDhmODZhZi0zaeLTQ4ZfeaseOGZgesai1jZWYgrTA07i73Gebhu98";
 
@@ -158,6 +162,6 @@ app.get("/", function(req, res) {
   res.send("App is working 👍");
 });
 
-app.listen(5000, () => {
-  console.log("Server listening on port 5000");
+app.listen(port, () => {
+  console.log('listening on ' + port);
 });
